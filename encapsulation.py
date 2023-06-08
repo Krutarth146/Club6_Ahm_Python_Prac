@@ -55,9 +55,9 @@ manoj.show_bal()
 
 manoj.show_loan_interest()  # 11
 
-print(Bank._ROI)  # 11
+# print(Bank._ROI)  # 11
 
-Bank.ROI = 15
-print(Bank.ROI)  # 15
+# Bank.ROI = 15
+# print(Bank.ROI)  # 15
 
-print(Bank.__tressury)
+# print(Bank.__tressury)
