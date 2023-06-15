@@ -1,7 +1,7 @@
 class Bank:
-    bank_employee = 5
-    _ROI = 9  # Class Variable
-    __tressury = 9000000
+    bank_employee = 5   # public class variable
+    _ROI = 9  # Class Variable (Protected)
+    __tressury = 9000000  # (Private)
 
     def __init__(self):
         self.name = None
@@ -55,9 +55,11 @@ manoj.show_bal()
 
 manoj.show_loan_interest()  # 11
 
-# print(Bank._ROI)  # 11
+print(Bank._ROI)  # 11
 
 # Bank.ROI = 15
 # print(Bank.ROI)  # 15
 
 # print(Bank.__tressury)
+
+print(Bank._Bank__tressury)   # 9000000
