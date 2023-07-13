@@ -1,24 +1,24 @@
 
 class Car:
     seating_capacity = 5        # class variable
-    allCars = []
+    allCars = []  # class Variable
 
-    def _init_(self, name, price, fuel):
-        self.name = name
-        self.price = price
-        self.fuel = fuel
-        Car.allCars.append(self)
+    def __init__(self, name, price, fuel):   # Parametrized Constructor
+        self.name = name    # Instance Variable
+        self.price = price   # INstance
+        self.fuel = fuel   # Instance
+        Car.allCars.append(self) 
 
     # creating a method
-    def displayDetails(self):
+    def displayDetails(self):   # Instance Method
         print(f"---------- Details of {self.name} ----------")
         print("Model Name:", self.name)
         print("Price:", self.price)
         print("Fuel:", self.fuel)
-        print("Seating Capacity:", self.seating_capacity)
+        print("Seating Capacity:", Car.seating_capacity)
         print()
 
-    def changeDetails(self):
+    def changeDetails(self):   # iNstance
         print("Enter new details (just press Enter if you want to keep that detail same):")
         self.name = input("Name: ")
         self.price = int(input("Price: "))
@@ -28,7 +28,7 @@ class Car:
     #     print("Something is -", something)
 
     # static methods
-    # @staticmethod
+    @staticmethod
     def showAllCars():
         print("Sr.No.\tName")
         for i in range(len(Car.allCars)):
@@ -72,7 +72,7 @@ Press 1 - to add a new car
 5 - exit
 """
 
-while True:
+while 2:
     print("Press:")
     print("1 to add new car")
     print("2 to display details of an exisiting car")
