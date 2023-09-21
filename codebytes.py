@@ -115,3 +115,63 @@
 # if not arr2:
 #     print('Yes')
 
+
+
+def make_bricks(small, big, goal):
+   
+    if (big*5) > goal : 
+        goal = goal % 5
+    else:
+        goal = goal - (5*big)   # goal = 46 - 5
+
+    if small>=goal: 
+        return True
+
+    return False
+    
+# print(make_bricks(1,4,12))
+print(make_bricks(3,2,8))
+print(make_bricks(43,1,46))
+
+
+list1 = [10,20]
+
+list2 = list1.copy()   # Shallow Copy  Xerox
+
+list1.append(900)
+list2.append(600)
+
+print(id(list1))
+print(id(list2))
+
+print(list1,list2)
+
+list3 = list1
+list3.append(400)
+print(list1)
+print(list3)   # Deep Copy
+
+l5 = list(list3)   # Shallow Copy
+l5.append(33)
+print(list3) 
+
+
+import copy
+
+copy.copy()
+
+m = [['T','s','i']
+h%x
+i #
+sM 
+$a 
+#t%
+ir!]]
+
+row = 0
+while row <= 6:
+    col = 0
+    while col <= 2:
+        print()
+        col+=1
+    row+=1 
