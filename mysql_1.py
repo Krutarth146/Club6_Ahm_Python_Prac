@@ -1,6 +1,6 @@
 import mysql.connector
 
-mydb = mysql.connector.connect(user = 'root', password = 'mysql', host = 'localhost', database='dktv')
+mydb = mysql.connector.connect(user = 'root', password = 'mysql', host = 'localhost', database='club6')
 
 if(mydb.is_connected()):
     print("Connection Established")
@@ -8,13 +8,16 @@ else:
     print("Not Connected")
 # print(mydb)  # <mysql.connector.connection_cext.CMySQLConnection object at 0x0000020824F224A0>
 cur = mydb.cursor()
+# cur.execute("CREATE DATABASE shilp1")
+# cur.execute("CREATE TABLE student(name varchar(20), roll int(4), marks float(3))")
+# print(cur)
 
-# cur.execute("CREATE DATABASE shilp")
-
-# cur.execute("CREATE TABLE  students(name varchar(20), roll int(4), marks float(3))")
+# query = ("Insert into student values (%s, %s, %s)")
+# val = ('Ashok', 902, 4.56)
+# cur.execute(query, val)
 
 # cur.execute("CREATE TABLE sample(name varchar(20), roll int(4), salary decimal(5,3), comment varchar(100))")
-# cur.execute("CREATE TABLE sample1(id int(4) AUTO_INCREMENT NOT NULL, name varchar(20) NOT NULL, roll int(4), salary decimal(5,3), comment varchar(100), PRIMARY KEY (id))")
+# cur.execute("CREATE TABLE sample1(id int(4) primary key AUTO_INCREMENT NOT NULL, name varchar(20) NOT NULL, roll int(4), salary decimal(5,3), comment varchar(100))")
 
 # cur.execute("CREATE TABLE sample2(id int(4) AUTO_INCREMENT NOT NULL, name varchar(20) NOT NULL, roll int(4), CONSTRAINT INAME PRIMARY KEY (id,name))")
 
@@ -27,12 +30,12 @@ cur = mydb.cursor()
 # cur.execute("create table cust (id int, name varchar(20))")
 
 # qu1 = "insert into cust values(%s, %s)"
-# val = (1, "Dhruv")
+# val = (1)
 # cur.execute(qu1, val)
 
 # cur.execute("CREATE TABLE CUST_DETAILS(ID int AUTO_INCREMENT NOT NULL,NAME VARCHAR(50) NOT NULL, MOB_NUMBER int NOT NULL, SUBS_END DATE NOT NULL, JOIN_DATE DATE NOT NULL, PASSWORD varchar(15) NOT NULL, GENDER varchar(10), PRIMARY KEY(ID,NAME))")
 # import date class
-from datetime import date
+# from datetime import date
 # extract current local date
 # today1 = date.today()
 
@@ -41,32 +44,32 @@ from datetime import date
 # joining= today1
 # password=input("Enter Password:")
 # gender=input("Enter Gender M/F/O:")
-cur.execute("SELECT DATE_FORMAT(DATE_ADD(SYSDATE(), INTERVAL 1 YEAR)) FROM DUAL")
-subscription=cur.fetchone()
-print(subscription)
-subscription = subscription[0]
+# cur.execute("SELECT DATE_FORMAT(DATE_ADD(SYSDATE(), INTERVAL 1 YEAR)) FROM DUAL")
+# subscription=cur.fetchone()
 # print(subscription)
+# subscription = subscription[0]
+# # print(subscription)
 # que="INSERT INTO CUST_DETAILS (ID,NAME,MOB_NUMBER,SUBS_END,JOIN_DATE,PASSWORD,Gender)VALUES(%s,%s,%s,%s,%s,%s,%s)"
 # val=['1',name,number,subscription,joining,password,gender]
 
 # -----------------------------------------------
 
-cur.execute("SELECT NAME, SALARY FROM SAMPLEL")
-record = cur.fetchone()
+cur.execute("SELECT name, marks FROM student")
+record = cur.fetchall()
 
-print(record)
-print(record[0])
-
+print(record)   # [('Manoj', 234.56), ('Ashok', 4.56), ('Ashok', 4.56), ('Ashok', 4.56), ('Ashok', 4.56)]
+print(record[2][0])   # Ashok
+  
 
 
 # -----------------------------------------------
 
 
 
-from datetime import datetime
-now = datetime.now()
-# id = 1
-print(now)
+# from datetime import datetime
+# now = datetime.now()
+# # id = 1
+# print(now)
 
 # cur.execute(que,(1,name,number,formatted_date,joining,password,gender))
 # cur.execute("CREATE TABLE AADHAR(AADHAR_ID INT(10) NOT NULL, A_NAME VARCHAR(30) NOT NULL, PERSON_ID INT, PRIMARY KEY (AADHAR_ID), FOREIGN KEY (PERSON_ID) REFERENCES PERSON(PERSON_ID))")
@@ -81,7 +84,7 @@ print(now)
 
 # cur.execute(S,dk)
 
-# mydb.commit()
+mydb.commit()
 
 
 
